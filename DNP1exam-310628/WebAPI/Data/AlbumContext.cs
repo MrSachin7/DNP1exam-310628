@@ -49,7 +49,9 @@ public class AlbumContext : DbContext, IDataAccess {
         EntityEntry<Image> entry = await Images.AddAsync(image);
         await SaveChangesAsync();
         Image imagetoReturn = entry.Entity;
-        imagetoReturn.Album = null;
+
+        imagetoReturn.Album = null;    // we make it null because the album on image is only for EFC and this cause cycle of objects outside
+
         return imagetoReturn;
     }
 

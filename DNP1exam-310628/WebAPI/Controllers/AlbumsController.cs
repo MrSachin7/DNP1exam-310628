@@ -14,7 +14,7 @@ public class AlbumsController : ControllerBase {
     }
 
     [HttpPost]
-    public async Task<ActionResult<Album>> AddAlbum([FromBody] Album album) {
+    public async Task<ActionResult<Album>> CreateAlbum([FromBody] Album album) {
         try {
             Album addedAlbum = await _dataAccess.AddAlbum(album);
             return Ok(addedAlbum);
@@ -26,7 +26,7 @@ public class AlbumsController : ControllerBase {
 
     [HttpGet]
     [Route("titles")]
-    public async Task<ActionResult<List<string>>> GetAllAlbumTitles() {
+    public async Task<ActionResult<List<string>>> GetTitles() {
         try {
             List<string> allAlbumTitles =await _dataAccess.GetAllAlbumTitles();
             return Ok(allAlbumTitles);
