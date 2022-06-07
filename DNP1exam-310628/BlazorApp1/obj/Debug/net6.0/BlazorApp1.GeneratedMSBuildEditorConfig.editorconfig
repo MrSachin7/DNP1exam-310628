@@ -27,6 +27,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nepal/OneDrive/Desktop/DNP-Exam-310628/DNP1exam-310628/BlazorApp1/Pages/CreateAlbum.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWxidW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ty97ogrjyi
+
+[C:/Users/nepal/OneDrive/Desktop/DNP-Exam-310628/DNP1exam-310628/BlazorApp1/Pages/CreateImage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlSW1hZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-gice8vuiyl
+
+[C:/Users/nepal/OneDrive/Desktop/DNP-Exam-310628/DNP1exam-310628/BlazorApp1/Pages/DisplayImages.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUltYWdlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-iw633v69pk
+
+[C:/Users/nepal/OneDrive/Desktop/DNP-Exam-310628/DNP1exam-310628/BlazorApp1/Pages/UIElements/Modal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlFbGVtZW50c1xNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qof2tq0u9j
+
 [C:/Users/nepal/OneDrive/Desktop/DNP-Exam-310628/DNP1exam-310628/BlazorApp1/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-45rkf8v3vv

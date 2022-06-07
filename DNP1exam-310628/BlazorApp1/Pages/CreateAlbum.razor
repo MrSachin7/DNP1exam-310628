@@ -1,0 +1,86 @@
+﻿@page "/CreateAlbum"
+@using Entities
+@using UIElements 
+@using BlazorApp1.Client
+@inject NavigationManager NavigationManager
+@inject IAlbumClient AlbumClient
+
+
+<div class="box">
+    <h3>Add Album</h3>
+    <EditForm Model="@_albumToCreate" OnValidSubmit="@AddAlbumAsync">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+
+        <div class="form-group field">
+            <span>
+                <label>Title :</label>
+            </span>
+            <span>
+                <InputTextArea rows="2" @bind-Value="_albumToCreate.Title"/>
+            </span>
+        </div>
+
+
+        <div class="form-group field">
+            <span>
+                <label>Description :</label>
+            </span>
+            <span>
+                <InputTextArea rows="2" @bind-Value="_albumToCreate.Description"/>
+            </span>
+        </div>
+        <div class="form-group field">
+            <span>
+                <label>Created By :</label>
+            </span>
+            <span>
+                <InputTextArea rows="2" @bind-Value="_albumToCreate.CreatedBy"/>
+            </span>
+        </div>
+
+        <p class="actions">
+            <button class="acceptbtn" type="submit">Create</button>
+        </p>
+    </EditForm>
+    @if (!string.IsNullOrEmpty(errorLabel)) {
+        <label>@errorLabel</label>
+    }
+    @if (showModal) {
+        <Modal>
+            <p>You have successfully added a new Album item. You should be very proud of yourself</p>
+            <button @onclick="@Proceed">Wonderful</button>
+        </Modal>
+    }
+</div>
+
+
+@code {
+
+    private Album _albumToCreate = new Album();
+    private string errorLabel= string.Empty;
+    private bool showModal;
+
+    private async Task AddAlbumAsync() {
+        try {
+            errorLabel = string.Empty;
+            await AlbumClient.AddAlbum(_albumToCreate);
+            showModal = true;
+        }
+        catch (Exception e) {
+            errorLabel = e.Message;
+        }
+
+
+    }
+
+    private void Proceed() {
+        showModal = false;
+        NavigationManager.NavigateTo("/DisplayImages");
+    }
+
+
+
+
+
+}

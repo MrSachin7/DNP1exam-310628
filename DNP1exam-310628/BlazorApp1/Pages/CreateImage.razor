@@ -1,0 +1,142 @@
+﻿@page "/CreateImage"  
+@using Entities
+@using UIElements
+@using BlazorApp1.Client
+@inject NavigationManager NavigationManager
+@inject IAlbumClient AlbumClient 
+@inject IImageClient ImageClient
+
+<div class="box">
+    <h3>Add Image</h3>
+    <EditForm Model="@_imageToAdd" OnValidSubmit="@AddImageAsync">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group field">
+            <span>
+
+                <label> Title:</label>
+            </span>
+            <span>
+                <InputTextArea rows="2" @bind-Value="_imageToAdd.Title"/>
+            </span>
+        </div>
+
+        <div class="form-group field">
+            <span>
+
+                <label> Description :</label>
+            </span>
+            <span>
+                <InputTextArea rows="3" @bind-Value="_imageToAdd.Description"/>
+            </span>
+        </div>
+        <div class="form-group field">
+            <span>
+                <label>Topic :</label>
+            </span>
+            <span>
+                <InputTextArea @bind-Value="_imageToAdd.Topic"/>
+            </span>
+        </div>
+        <div class="form-group field">
+            <span>
+
+                <label> URl:</label>
+            </span>
+            <span>
+                <InputTextArea rows="2" @bind-Value="_imageToAdd.URL"/>
+            </span>
+        </div>
+
+        <div class="form-group field">
+            <span>
+                <label>Album :</label>
+            </span>
+            <span>
+
+                @if (_allAlbumTitles != null) {
+                    <InputSelect @bind-Value="_selectedAlbumTitle">
+                        <option selected> Select an album</option>
+                        @foreach (var albumTitle in _allAlbumTitles) {
+                            <option value="@albumTitle"> @albumTitle</option>
+                        }
+                    </InputSelect>
+                }
+
+            </span>
+        </div>
+        <p class="actions">
+            <button class="acceptbtn" type="submit">Create</button>
+        </p>
+    </EditForm> 
+    @if (!string.IsNullOrEmpty(_imageToAdd.URL)) {
+        <div class="form-group field">
+            <span>
+                <label>Is this the image you selected ?? </label>
+            </span>
+            <span>
+                <img src="@_imageToAdd.URL" alt="The image you selected is not found" style="height: 100px; width: 100px"/>
+            </span>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(errorLabel)) {
+        <label style="color: red">@errorLabel</label>
+    }
+    @if (showModal) {
+        <Modal>
+            <p>You have successfully added a new Book item. You should be very proud of yourself</p>
+            <button @onclick="@Proceed">Wonderful</button>
+        </Modal>
+    }
+</div>
+
+@code {
+
+    private Image _imageToAdd = new Image();
+    private string errorLabel = string.Empty;
+    private bool showModal;
+
+    private ICollection<string>? _allAlbumTitles;
+    private string? _selectedAlbumTitle;
+
+
+    protected override async Task OnInitializedAsync() {
+        try {
+            _allAlbumTitles = await AlbumClient.GetAllAlbumTitles();
+        }
+        catch (Exception e) {
+            errorLabel = e.Message;
+        }
+    }
+
+
+    private void Proceed() {
+        showModal = false;
+        NavigationManager.NavigateTo("/DisplayImages");
+    }
+
+    private async Task AddImageAsync() {
+        try {
+            errorLabel = string.Empty;
+
+            if (string.IsNullOrEmpty(_selectedAlbumTitle)) {
+                errorLabel = "Album must be selected";
+                return;
+
+            }
+            if (!Uri.IsWellFormedUriString(_imageToAdd.URL,UriKind.Absolute)) {
+                errorLabel = "The URI should be a link to the path.\n Note : it cannot be base64 string of the image \n when you copy from google it might be base64 string with datatype " +
+                             ". They are not allowed. Please make sure they are string";
+                return;
+            }
+            await ImageClient.AddImage(_imageToAdd, _selectedAlbumTitle);
+            showModal = true;
+        }
+        catch (Exception e) {
+            errorLabel = e.Message;
+        }
+
+    }
+
+}

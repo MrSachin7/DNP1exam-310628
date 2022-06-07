@@ -1,0 +1,69 @@
+﻿@page "/DisplayImages" 
+@using Entities 
+@using BlazorApp1.Client
+@inject IDisplayClient DisplayClient
+
+<h3> Images</h3>
+
+<div class="filterbar">
+    <div class="filterscontainer">
+        <label class="funnel" style="color: red"> Search images :</label>
+        <div class="filter">
+            <div>
+                <label>Image topic:</label>
+            </div>
+            <div>
+                <input type="text" class="owneridfield" @bind="imageTopic" placeholder="Image topic"/>
+            </div>
+        </div>
+        <div class="filter">
+            <div>
+                <label style="text-align: center">Team name</label>
+            </div>
+            <div>
+                <input type="text" @bind="albumCreator" placeholder="Album Creator"/>
+                <button onclick="@Filter"> Search</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@if (_imagesToShow == null) {
+    <em> Searched images will be displayed here</em>
+}
+else if (!_imagesToShow.Any()) {
+    <em> No images found on given criteria</em>
+}
+else {
+    @foreach (Image image in _imagesToShow) {
+        <div > @image.Title</div>
+        <img src="@image.URL" alt="Either the provided link was incorrect or the image no longer exists" style="height: 100px; width:100px;"/>
+        <div> @image.Description</div>
+    }
+}   
+@if (!string.IsNullOrEmpty(errorLabel)) {
+    <label style="color: red">@errorLabel</label>
+}   
+
+
+
+@code {
+
+    private ICollection<Image>? _imagesToShow;
+
+    private bool doShowFilters;
+    private string albumCreator = string.Empty;
+    private string imageTopic = string.Empty;
+    private string errorLabel = string.Empty;
+
+    private async Task Filter() {
+        try {
+            _imagesToShow=  await DisplayClient.GetImagesAsync(albumCreator, imageTopic);
+        }
+        catch (Exception e) {
+            errorLabel = e.Message;
+        }
+    }
+
+}

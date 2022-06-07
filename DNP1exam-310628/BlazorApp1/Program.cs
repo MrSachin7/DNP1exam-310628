@@ -1,3 +1,4 @@
+using BlazorApp1.Client;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorApp1.Data;
@@ -7,8 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
-
+builder.Services.AddScoped<IAlbumClient, AlbumRestClient>();
+builder.Services.AddScoped<IImageClient, ImageRestClient>();
+builder.Services.AddScoped<IDisplayClient, DisplayRestClient>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
