@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0HUwxer4Z3eSn0PkZ91uaygMS6Z2fW9RDHoPsCA/8s2U5qy3E5VFlRuqIz0yJ3ww4h80q+trV2r1A2svZiMLhw==",
+  "dgSpecHash": "Qb9H5Y/n82dQ7xt+6JRCTA9uQME3jWjwRDSqX993DOfKOZd7uPIviiGs/13elBMAuzSBMTX9cq0+ino5R0Hzcw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nepal\\OneDrive\\Desktop\\DNP-Exam-310628\\DNP1exam-310628\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "D:\\SEM 3\\DNP1\\DNP1exam-310628\\DNP1exam-310628\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nepal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nepal\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.5\\microsoft.data.sqlite.core.6.0.5.nupkg.sha512",
@@ -39,7 +39,11 @@
     "C:\\Users\\nepal\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\nepal\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\nepal\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\nepal\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+    "C:\\Users\\nepal\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }

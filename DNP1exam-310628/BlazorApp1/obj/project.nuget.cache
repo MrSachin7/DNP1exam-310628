@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NsJ9wRMkgEmygcwM+k7Uu3YytR5IdnkPQsVtyUMPRBi/Rck+oQx6D+DN/A9uj9q3ofCrzty0dUuorCyqLPX1Bw==",
+  "dgSpecHash": "HuyV4er+9aFOnc/qIe7R/dYa1jZ4TgQNTck6WiK8cUgisf2jd2Zyti26iEvEYNHu/aeimp0ePq3zNnU2N223sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nepal\\OneDrive\\Desktop\\DNP-Exam-310628\\DNP1exam-310628\\BlazorApp1\\BlazorApp1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\SEM 3\\DNP1\\DNP1exam-310628\\DNP1exam-310628\\BlazorApp1\\BlazorApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
+  ],
   "logs": []
 }

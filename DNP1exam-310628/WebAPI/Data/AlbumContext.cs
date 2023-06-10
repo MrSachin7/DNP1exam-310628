@@ -11,7 +11,7 @@ public class AlbumContext : DbContext, IDataAccess {
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         optionsBuilder.UseSqlite(
-            @"Data Source = C:\Users\nepal\OneDrive\Desktop\DNP-Exam-310628\DNP1exam-310628\WebAPI\albums.db");
+            @"Data Source = D:\SEM 3\DNP1\DNP1exam-310628\DNP1exam-310628\WebAPI\albums.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
@@ -25,17 +25,10 @@ public class AlbumContext : DbContext, IDataAccess {
     }
 
     public async Task<List<string>> GetAllAlbumTitles() {
-        var allAlbumTitles = await Albums.Select(album => new {
+        return await Albums.Select(album => new {
             album.Title
-        }).ToListAsync();
+        }).Select(title => title.Title).ToListAsync();
 
-
-        List<string> listToReturn = new List<string>();
-        foreach (var i in allAlbumTitles) {
-            listToReturn.Add(i.Title);
-        }
-
-        return listToReturn;
     }
 
     public async Task<Image> AddImage(Image image, string albumTitle) {
@@ -60,7 +53,7 @@ public class AlbumContext : DbContext, IDataAccess {
         IQueryable<Image> queryable = Images.AsQueryable();
 
         if (!string.IsNullOrEmpty(albumCreator)) {
-            queryable = queryable.Where(image => image.Album.CreatedBy.ToLower().Equals(albumCreator.ToLower()));
+            queryable = queryable.Where(image => image.Album!.CreatedBy.ToLower().Equals(albumCreator.ToLower()));
         }
 
         if (! string.IsNullOrEmpty(topic)) {

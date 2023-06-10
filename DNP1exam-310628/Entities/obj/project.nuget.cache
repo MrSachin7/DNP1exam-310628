@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "aF47Kz4uwtWEOwWSa1HcTw//3FcNGX20OaUJaDymgKzmZJ+AaN2z+XDMpDMC3FLjj8oCRxqgAIgazVfW0Yod/A==",
+  "dgSpecHash": "ijychDX+avee7HVLpMgjC3stQjH7DHAJa+jvGPi+K5doZ/YzVUlBK9Lqzt7IpXZYJVJHKEZdPRHfVfDNqcSk/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nepal\\OneDrive\\Desktop\\DNP-Exam-310628\\DNP1exam-310628\\Entities\\Entities.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\SEM 3\\DNP1\\DNP1exam-310628\\DNP1exam-310628\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nepal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
+  ],
   "logs": []
 }
